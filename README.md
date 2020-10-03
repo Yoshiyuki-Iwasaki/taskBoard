@@ -1,5 +1,3 @@
-# my-trello
-
 ## Project setup
 ```
 npm install
