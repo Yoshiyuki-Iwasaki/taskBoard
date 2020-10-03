@@ -5,7 +5,7 @@
       <p class="list-counter">total: {{ totalCardInList }}</p>
       <div class="deletelist" @click="removeList">×</div>
     </div>
-    <draggable group="cards"
+    <draggable class="cardGroup" group="cards"
            :list="cards"
            @end="$emit('change')">
         <card v-for="(item, index) in cards"
@@ -57,3 +57,54 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .list {
+    margin: 0 5px auto;
+    position: relative;
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 290px;
+    width: 290px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    border: solid #ddd 1px;
+    color: gray;
+    vertical-align: top;
+  }
+  
+  .listheader {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  
+  .list-title {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .list-counter {
+    font-size: 15px;
+    color: #242424;
+  }
+  
+  .deletelist {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    font-size: 28px;
+  }
+  
+  .deletelist:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .cardGroup {
+    margin-top: 15px;
+  }
+</style>
